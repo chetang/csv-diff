@@ -151,7 +151,7 @@ class CSVDiff
                 end
             end
         else
-            diff_fields = (right_fields + left_fields).uniq.reject{ |fld| ignore_fields.include?(fld.upcase) }
+            diff_fields = (right_fields + left_fields).uniq.compact.reject{ |fld| ignore_fields.include?(fld.upcase) }
         end
         diff_fields
     end
